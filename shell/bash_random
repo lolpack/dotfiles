@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
+
+# GRC colorizes nifty unix tools all over the place
+if $(grc &>/dev/null) && ! $(brew &>/dev/null)
+then
+  source `brew --prefix`/etc/grc.bashrc
+fi

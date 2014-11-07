@@ -1,0 +1,32 @@
+#!/bin/bash
+
+run_list() {
+
+cat <<EOT
+
+OS X dotfiles - Eric Baer
+
+Additional software to install
+
+Browsers:
+    Firefox
+    Google Chrome
+    Opera
+
+Development:
+    Filezilla
+    iTerm 2
+
+Other:
+    Dropbox
+    Google Drive
+    Atom
+    Flux
+    VLC
+    Transmission
+    Evernote
+    Spectacle
+    Caffeine
+EOT
+
+}
