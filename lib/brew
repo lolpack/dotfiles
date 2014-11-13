@@ -28,6 +28,7 @@ run_brew() {
             # Install everything else
             'node'
             'git'
+            'git-flow'
             'ack'
             'htop'
             'grc'
