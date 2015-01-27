@@ -1,4 +1,4 @@
-# Dotfiles (Eric Baer)
+# Dotfiles (Aaron Pollack)
 
     My OS X dotfiles.
 
@@ -11,10 +11,10 @@ dotfiles in your HOME and `.vim` directories.
 ```bash
 $ bash -c "$(curl -fsSL raw.github.com/baer/dotfiles/master/bin/dotfiles)"
 ```
-
+##IMPORTANT!##
 N.B. If you wish to fork this project and maintain your own dotfiles, you must
 substitute my username for your own in the above command and the 2 variables
-found at the top of the `bin/dotfiles` script.
+found at the top of the `bin/dotfiles` script. Otherwise github will think you are me!
 
 ## How to update
 
