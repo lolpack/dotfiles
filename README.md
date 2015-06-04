@@ -9,7 +9,7 @@ Tools](https://developer.apple.com/downloads) and may overwrite existing
 dotfiles in your HOME and `.vim` directories.
 
 ```bash
-$ bash -c "$(curl -fsSL raw.github.com/lolpacke/dotfiles/master/bin/dotfiles)"
+$ bash -c "$(curl -fsSL raw.github.com/lolpack/dotfiles/master/bin/dotfiles)"
 ```
 ##IMPORTANT!##
 N.B. If you wish to fork this project and maintain your own dotfiles, you must
