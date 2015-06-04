@@ -4,7 +4,7 @@ DOTFILES_DIRECTORY="${HOME}/.dotfiles"
 DOTFILES_GIT_REMOTE="git@github.com:baer/dotfiles.git"
 DOTFILES_TARBALL_PATH="https://github.com/baer/dotfiles/tarball/master"
 
-If missing, download and extract the dotfiles repository
+# If missing, download and extract the dotfiles repository
 if [[ ! -d ${DOTFILES_DIRECTORY} ]]; then
     printf "$(tput setaf 7)Downloading dotfiles...\033[m\n"
     mkdir ${DOTFILES_DIRECTORY}
