@@ -49,3 +49,7 @@ load_dotfiles() {
 
 load_dotfiles
 unset load_dotfiles
+
+alias getquote='function _getquotefor() { curl http://www.iheartquotes.com/api/v1/random$1; unset -f _getquotefor; }; _getquotefor'
+# getquote ?source=ben_franklin
+getquote
