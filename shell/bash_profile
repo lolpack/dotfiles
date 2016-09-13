@@ -19,7 +19,6 @@ fi
 
 load_dotfiles() {
     declare -a files=(
-        $HOME/.rvm/scripts/rvm # Load RVM into a shell session *as a function*
         $HOME/.dotfiles/shell/bash_options # Options
         $HOME/.dotfiles/shell/bash_exports # Exports
         $HOME/.dotfiles/shell/bash_aliases # Aliases
@@ -45,11 +44,14 @@ load_dotfiles() {
             source ${files[$index]}
         fi
     done
+
+    export NVM_DIR="/Users/aaronpollack/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 }
 
 load_dotfiles
 unset load_dotfiles
 
-alias getquote='function _getquotefor() { curl http://www.iheartquotes.com/api/v1/random$1; unset -f _getquotefor; }; _getquotefor'
-# getquote ?source=ben_franklin
-getquote
+source ~/git-completion.bash
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

@@ -19,7 +19,7 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+alias httpdump="sudo tcpdump -i en4 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -60,3 +60,19 @@ alias lt="ls -toG"
 alias la="ls -AGFoh"
 # List all except . and ..., color, mark file types, long form no use group, order by last modified, file size
 alias lat="ls -AGFoth"
+
+#Git
+alias lolprune="git branch --merged | grep -v '\*' | grep -v master | grep -v dev | xargs -n 1 git branch -d"
+
+#Why the fuck do I always forget this???
+alias lolserv="lsof -i -n -P | grep LISTEN"
+alias lolhost="netstat | grep 'tcp\|udp' | awk '{ print $5; }' | cut -d: -f1 | sort | uniq -c | sort -nr"
+
+alias lolwho="ping `ipconfig getifaddr en4` && arp -a"
+
+alias lollist="tr -s ' ' | cut -d ' ' -f 2 | tr '\n' ',' | sed 's/,$//'" #newline delimted to comma.
+alias lolgrep="grep -E -o \"Tra\..{0,9}\""
+alias netlei="sudo netstat -tnp|grep ESTABLISHED|awk '{print $5}'|sed 's/::ffff://g'|sed 's/:/ /g'|awk '{print $1}'|sort -n|uniq -c|sort -n -r|more"
+
+alias lolport="ssh -L 5005:50.181.213.215:5005 -N 127.0.0.1"
+alias lolinstall="PATH=\"$PATH:/usr/local/bin\" npm install -g gulp"

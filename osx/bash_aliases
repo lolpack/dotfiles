@@ -23,3 +23,22 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
+
+alias subl="sublime"
+
+notify () {
+  title="Alert!"
+   if [ -z "$1" ]                         # Is parameter #1 zero length?
+   then
+    desc="Erhmegerhd something happened"
+   else
+    desc=${1}
+   fi
+
+   osascript -e "display notification \"$desc\" with title \"$title\""
+
+   return 0
+}
+
+alias notify="notify"
+alias notifydeploy="notify \"Deploy Complete\""

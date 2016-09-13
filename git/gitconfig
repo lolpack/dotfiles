@@ -88,7 +88,7 @@
 [core]
         excludesfile = ~/.gitignore
         attributesfile = ~/.gitattributes
-        editor = vim
+        editor = subl -n -w
         ignorecase = false
 
 [apply]
