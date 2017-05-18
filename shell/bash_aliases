@@ -67,6 +67,7 @@ alias lolprune="git branch --merged | grep -v '\*' | grep -v master | grep -v de
 #Why the fuck do I always forget this???
 alias lolserv="lsof -i -n -P | grep LISTEN"
 alias lolhost="netstat | grep 'tcp\|udp' | awk '{ print $5; }' | cut -d: -f1 | sort | uniq -c | sort -nr"
+alias gbr="git branch | grep -v "master" | xargs git branch -D"
 
 alias lolwho="ping `ipconfig getifaddr en4` && arp -a"
 
@@ -76,3 +77,11 @@ alias netlei="sudo netstat -tnp|grep ESTABLISHED|awk '{print $5}'|sed 's/::ffff:
 
 alias lolport="ssh -L 5005:50.181.213.215:5005 -N 127.0.0.1"
 alias lolinstall="PATH=\"$PATH:/usr/local/bin\" npm install -g gulp"
+alias redis-trib="/Users/aaronpollack/dev/redis/src/redis-trib.rb"
+
+iponly () {
+  nslookup ${1} | grep  Address | tail -n1 |  grep -o -E '\d+(\.\d+){3}'
+}
+
+alias loliponly="iponly"
+
