@@ -63,6 +63,7 @@ alias lat="ls -AGFoth"
 
 #Git
 alias lolprune="git branch --merged | grep -v '\*' | grep -v master | grep -v dev | xargs -n 1 git branch -d"
+alias loldelbranch="git branch | grep -v 'production' | grep -v 'beta' | grep -v 'stage' | grep -v 'load' | grep -v 'integration'|  grep -v 'master' | xargs git branch -D"
 
 #Why the fuck do I always forget this???
 alias lolserv="lsof -i -n -P | grep LISTEN"
@@ -79,8 +80,16 @@ alias lolport="ssh -L 5005:50.181.213.215:5005 -N 127.0.0.1"
 alias lolinstall="PATH=\"$PATH:/usr/local/bin\" npm install -g gulp"
 alias redis-trib="/Users/aaronpollack/dev/redis/src/redis-trib.rb"
 
+export PATH=/Users/aaronpollack/dev/mongodb/bin:$PATH
+
+export PATH=/usr/local/go/bin:$PATH
+
 iponly () {
   nslookup ${1} | grep  Address | tail -n1 |  grep -o -E '\d+(\.\d+){3}'
+}
+
+setjdk() {
+  export JAVA_HOME=$(/usr/libexec/java_home -v $1)
 }
 
 alias loliponly="iponly"
