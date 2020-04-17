@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# prompt themeing
+# # prompt themeing
 source "$DOTFILES/shell/prompt/colors.theme.bash"
 source "$DOTFILES/shell/prompt/base.theme.bash"
 

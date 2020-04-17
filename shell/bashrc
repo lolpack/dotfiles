@@ -1,17 +1,21 @@
 #!/bin/bash
 
+#https://sanctum.geek.nz/arabesque/better-bash-history/
+HISTFILESIZE=1000000
+HISTSIZE=1000000
+HISTCONTROL=ignoreboth
+HISTIGNORE='ls:bg:fg:history'
+HISTTIMEFORMAT='%F %T '
+PROMPT_COMMAND='history -a'
+
+
 # bashrc
 source ~/.profile
 
 [ -n "$PS1" ] && source ~/.bash_profile
 
-export NVM_DIR="/Users/aaronpollack/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-nvm use default
-
-PATH="/Users/aaronpollack/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/Users/aaronpollack/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/aaronpollack/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/aaronpollack/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/aaronpollack/perl5"; export PERL_MM_OPT;
+PATH="/Users/apollackreload/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="/Users/apollackreload/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/apollackreload/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/apollackreload/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/apollackreload/perl5"; export PERL_MM_OPT;

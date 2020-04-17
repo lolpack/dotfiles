@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+LC_ALL=C # Force chars below to place nice with sed
+
 THEME_PROMPT_HOST='\H'
 
 SCM_CHECK=${SCM_CHECK:=true}
@@ -100,7 +102,7 @@ function git_prompt_vars {
     SCM_IS_BRANCH=1
     SCM_IS_TAG=0
   else
-    SCM_BRANCH=$(git describe --tags --exact-match 2> /dev/null)
+    SCM_BRANCH=$(git describe --tags --exact-match 2> /dev/null)Ï
     SCM_IS_TAG=1
     SCM_IS_BRANCH=0
   fi
@@ -124,7 +126,7 @@ function svn_prompt_vars {
   SCM_PREFIX=${SVN_THEME_PROMPT_PREFIX:-$SCM_THEME_PROMPT_PREFIX}
   SCM_SUFFIX=${SVN_THEME_PROMPT_SUFFIX:-$SCM_THEME_PROMPT_SUFFIX}
   SCM_BRANCH=$(svn info 2> /dev/null | awk -F/ '/^URL:/ { for (i=0; i<=NF; i++) { if ($i == "branches" || $i == "tags" ) { print $(i+1); break }; if ($i == "trunk") { print $i; break } } }') || return
-  SCM_CHANGE=$(svn info 2> /dev/null | sed -ne 's#^Revision: ##p' )
+  SCM_CHANGE=$(svn info 2> /dev/null | sed -ne 's#^Revision: ##p' )Ï
 }
 
 function hg_prompt_vars {

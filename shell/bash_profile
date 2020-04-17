@@ -44,14 +44,15 @@ load_dotfiles() {
             source ${files[$index]}
         fi
     done
-
-    export NVM_DIR="/Users/aaronpollack/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 }
 
 load_dotfiles
 unset load_dotfiles
 
-source ~/git-completion.bash
-
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+alias subl="/usr/local/bin/subl";
+export PATH=/usr/local/bin:$PATH
+
+# added by Anaconda3 5.2.0 installer
+# export PATH="/Users/apollack/anaconda3/bin:$PATH"
+

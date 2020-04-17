@@ -1,0 +1,1 @@
+for i; do echo -n "this.$i = $i"$'\n'; done; echo
